@@ -105,7 +105,7 @@ It should have the following columns:
 Part 8: Make/Modify Routes For Users and Feedback
 -------------------------------------------------
 
-GET /users/<username>
+GET /users/\<username>
 
 Show information about the given user.
 
@@ -115,27 +115,27 @@ For each piece of feedback, display with a link to a form to edit the feedback a
 
 Have a link that sends you to a form to add more feedback and a button to delete the user **Make sure that only the user who is logged in can successfully view this page.**
 
-POST /users/<username>/delete
+POST /users/\<username>/delete
 
 Remove the user from the database and make sure to also delete all of their feedback. Clear any user information in the session and redirect to /. **Make sure that only the user who is logged in can successfully delete their account**
 
-GET /users/<username>/feedback/add
+GET /users/\<username>/feedback/add
 
 Display a form to add feedback **Make sure that only the user who is logged in can see this form**
 
-POST /users/<username>/feedback/add
+POST /users/\<username>/feedback/add
 
 Add a new piece of feedback and redirect to /users/<username> — **Make sure that only the user who is logged in can successfully add feedback**
 
-GET /feedback/<feedback-id>/update
+GET /feedback/\<feedback-id>/update
 
 Display a form to edit feedback — [\*\*](index.html#id1)Make sure that only the user who has written that feedback can see this form \*\*
 
-POST /feedback/<feedback-id>/update
+POST /feedback/\<feedback-id>/update
 
 Update a specific piece of feedback and redirect to /users/<username> — **Make sure that only the user who has written that feedback can update it**
 
-POST /feedback/<feedback-id>/delete
+POST /feedback/\<feedback-id>/delete
 
 Delete a specific piece of feedback and redirect to /users/<username> — **Make sure that only the user who has written that feedback can delete it**
 

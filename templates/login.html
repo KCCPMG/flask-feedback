@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock %}
+{% block content %}
+  <h1>Login</h1>
+  <form method="POST">
+    {% for field in form %}
+    <div class="row">
+      <div class="col-4">
+        {{field.label}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        {{field (class="form-control")}}
+      </div>
+    </div>
+    {% endfor %}
+    <div class="row">
+      <div class="col-4">
+        <button class="btn btn-primary" type="submit">
+          Log In
+        </button>
+      </div>
+    </div>
+  </form>
+{% endblock %}

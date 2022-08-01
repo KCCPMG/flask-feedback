@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Users Page{% endblock %}
+{% block content %}
+  <h1>Welcome!</h1>
+  <p>{{session["username"]}}</p>
+  <p>{{email}}</p>
+  <p>{{first_name}}</p>
+  <p>{{last_name}}</p>
+  <div>
+    {% for fb in feedback %}
+      <h5>{{fb.title}}</h5>
+      <p>{{fb.content}}</p>
+    {% endfor %}
+  </div>
+  
+{% endblock %}
