@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Add Feedback{% endblock %}
+{% block content %}
+  <form id="add-feedback-form" method="POST">
+    {% for field in form %}
+      {% if field.widget.input_type != 'hidden' %}
+        {{field.label(class_="")}}
+        {{field(class_="form-control")}}
+        {% for error in field.errors %}
+          <div class="alert alert-danger">{{error}}</div>
+        {% endfor %}
+        <br/>
+      {% else %}
+        {% if field.name == 'username' %}
+          {{field(value=session["username"])}}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    <button class="btn btn-primary" type="submit">Submit Changes</button>
+  </form>
+
+{% endblock %}

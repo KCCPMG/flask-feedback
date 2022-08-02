@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Add Feedback{% endblock %}
+{% block content %}
+  <form id="edit-feedback-form" method="POST">
+    {{ form.username(value=session["username"]) }}
+    <div class="row">
+      <div class="col-4">
+        {{form.title.label(class="")}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        {{form.title (class="form-control", value=title )}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-4">
+        {{form.content.label(class="")}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        {{form.content (class="form-control", value=content )}}
+      </div>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Submit Changes</button>
+  </form>
+
+{% endblock %}

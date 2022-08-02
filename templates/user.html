@@ -6,10 +6,17 @@
   <p>{{email}}</p>
   <p>{{first_name}}</p>
   <p>{{last_name}}</p>
-  <div>
+  <div id="feedback-display">
+    <h2>Feedback</h2>
     {% for fb in feedback %}
       <h5>{{fb.title}}</h5>
       <p>{{fb.content}}</p>
+      <a href="/feedback/{{fb.id}}/update">
+        <button class="btn btn-primary">Update Feedback</button>
+      </a>
+      <a href="/feedback/{{fb.id}}/delete">
+        <button class="btn btn-danger">Delete Feedback</button>
+      </a>
     {% endfor %}
   </div>
   
